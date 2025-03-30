@@ -1,51 +1,53 @@
-    <template lang="">
+<template lang="">
 
-            <div class="main-container">
-                <div class="left-container">       
-                    <div class="logo-container">
-                        <img src="@/assets/logo.png" class="logo" style="width:50px;">
-                    <label style="font-size:42px;">Checkplify</label>
-                    </div>
-                    <div class="Left-menu-container">
-                        <div class="db-container">
-                            <router-link to="/dashboard">DashBoard</router-link>
+    <div class="main-container">
+        <div class="left-container">       
+            <div class="logo-container">
+                <img src="@/assets/logo.png" class="logo" style="width:50px;">
+            <label style="font-size:42px;">Checkplify</label>
+            </div>
+            <div class="Left-menu-container">
+                <div class="db-container">
+                    <router-link to="/dashboard">DashBoard</router-link>
+                </div>
+                <div class="rp-container">
+                    <router-link to="/report">Report</router-link>
+                </div>
+                <div class="att-container">
+                    <router-link to="/attendance">Attendance</router-link>
+                </div>
+                <div class="st-container" @mouseenter="SetdropdownVisible = true" @mouseleave="SetdropdownVisible = false" >
+                    <label >Setting</label>
+                    <transition name="fade">
+                        <div class="set-dropdown" v-show="SetdropdownVisible">
+                            <ul>
+                                <li><router-link>Account Information</router-link></li>
+                                <li><router-link>Change Password</router-link></li>
+                                <li><router-link>Notification</router-link></li>
+                                <li><router-link>Personalization</router-link></li>
+                                <li><router-link>Security and Privacy</router-link></li>
+                            </ul>
                         </div>
-                        <div class="rp-container">
-                            <router-link to="/report">Report</router-link>
-                        </div>
-                        <div class="att-container">
-                            <router-link to="/attendance">Attendance</router-link>
-                        </div>
-                        <div class="st-container" @mouseenter="SetdropdownVisible = true" @mouseleave="SetdropdownVisible = false" >
-    <label >Setting</label>
-    <transition name="fade">
-        <div class="set-dropdown" v-show="SetdropdownVisible">
-            <ul>
-                <li><router-link>Account Information</router-link></li>
-                <li><router-link>Change Password</router-link></li>
-                <li><router-link>Notification</router-link></li>
-                <li><router-link>Personalization</router-link></li>
-                <li><router-link>Security and Privacy</router-link></li>
-            </ul>
+                    </transition>
+                </div>
+            </div>
         </div>
-    </transition>
-</div>
+
+        <div id="right-container">
+            <div class="right-container">
+                <div class="search-container">
+                    <div class="txt-search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" placeholder="Search">
                     </div>
                 </div>
-                        <div class="right-container">
-                            <div class="search-container">
-                            <div class="txt-search">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                                <input type="text" placeholder="Search">
-                            </div>
-                            </div>
-                            <div class="profile-container" @click="toggleDropdown">
-                                <i class="fa-solid fa-user"></i>    
-                                <div class="profile-dropdown" >
-                                    <router-link to="" >My Profile
-                                        <i class="fa-solid fa-angle-down" :class="{'rotate': ProfiledropdownVisible, 'rotate-back': !ProfiledropdownVisible}" style="background-color:white;font-size:30px;"></i>
-                                </router-link>
-                                 <transition name="fade">
+                <div class="profile-container" @click="toggleDropdown">
+                    <i class="fa-solid fa-user"></i>    
+                    <div class="profile-dropdown" >
+                        <router-link to="" >My Profile
+                            <i class="fa-solid fa-angle-down" :class="{'rotate': ProfiledropdownVisible, 'rotate-back': !ProfiledropdownVisible}" style="background-color:white;font-size:30px;"></i>
+                        </router-link>
+                        <transition name="fade">
                             <div class="dropdown" v-show="ProfiledropdownVisible">
                                 <ul>
                                     <li>
@@ -55,21 +57,18 @@
                                         <router-link to="/login">Log out</router-link>
                                     </li>
                                 </ul>    
-                                </div>
-                                 </transition>
-                            </div>    
-                        </div>
-                                
-                        </div>
-                       
-                        <div class="link-container">
-                            <router-view></router-view>
-                        </div>
-                
-                    
+                            </div>
+                        </transition>
+                    </div>
                 </div>
+            </div>
+            <div class="link-container">
+                <router-view></router-view>
+            </div>
+        </div>
         
-    </template>
+    </div>
+</template>
 <script>
 export default {
     data() {
@@ -107,15 +106,19 @@ export default {
     width: 20%;
     max-width: 400px;
     color: white;
-    height: 100%;
+    /* height: 100%; */
     min-height: 100vh;
     padding: 20px;
 }
 
+.logo-container > label {
+    font-family: 'Poppins', sans-serif;
+}
+
 .main-container .right-container {
     background-color: white;
-    width: 80%;
-    height: 100%;
+    width: 100%;
+    /* height: 100%; */
 }
 
 .Left-menu-container {
@@ -275,11 +278,21 @@ export default {
     display: inline-block;
 }
 
-
-.right-container {
+#right-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
     width: 100%;
-    height: 100vh;
-    padding: 36px 26px;
+    gap: 1rem;
+    padding: 36px 26px;   
+}
+
+
+.right-container, .link-container {
+    width: 100%;
+    /* height: 100vh; */
+    /* padding: 36px 26px; */
     display: flex;
 }
 
@@ -400,4 +413,9 @@ export default {
   transform: rotate(0deg);
   transition: transform 0.2s ease-in-out;
 }
+
+/* .link-container {
+    width: 100%;
+    height: 100%;
+} */
 </style>

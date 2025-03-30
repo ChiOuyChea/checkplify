@@ -15,7 +15,8 @@
       return {
         menu:[
           {name:"Home",to:"/"},
-          {name:"About",to:"/about"}
+          {name:"About",to:"/about"},
+          {name:"Dashboard",to:"/dashboard"},
         ]
       }
     },
