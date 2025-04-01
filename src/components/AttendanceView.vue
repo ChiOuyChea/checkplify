@@ -149,7 +149,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
     .attendance-wrapper {
         font-family: "Poppins", sans-serif;
         display: grid;
