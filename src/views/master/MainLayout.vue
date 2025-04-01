@@ -21,7 +21,7 @@
                     <transition name="fade">
                         <div class="set-dropdown" v-show="SetdropdownVisible">
                             <ul>
-                                <li><router-link>Account Information</router-link></li>
+                                <li><router-link to="/AccountInformation">Account Information</router-link></li>
                                 <li><router-link>Change Password</router-link></li>
                                 <li><router-link>Notification</router-link></li>
                                 <li><router-link>Personalization</router-link></li>
@@ -92,7 +92,6 @@ export default {
     display: flex;
     align-items: center;
     margin-top: 36px;
-    margin-left: 32px;
     gap: 1rem;
 }
 
@@ -101,10 +100,13 @@ export default {
     display: flex;
 }
 
+.left-container{
+    width: 100%;
+    max-width: 350px;
+}
+
 .main-container .left-container {
     background-color: #0092E1;
-    width: 20%;
-    max-width: 400px;
     color: white;
     /* height: 100%; */
     min-height: 100vh;
@@ -118,6 +120,7 @@ export default {
 .main-container .right-container {
     background-color: white;
     width: 100%;
+  display: flex;
     /* height: 100%; */
 }
 
@@ -129,15 +132,19 @@ export default {
     flex-direction: column;
     justify-content: center;
     gap: 2.2rem;
+
 }
 
 .icon {
     width: 30px;
 }
 
-.st-container {
+.st-container{
   position: relative;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .st-container:hover .set-dropdown {
@@ -157,17 +164,22 @@ export default {
   white-space: nowrap;
 }
 
+.st-container .set-dropdown ul li{
+
+}
+
 .st-container .set-dropdown ul li a{
   background-image:none;
   background-color:white;
   color:#0092E1 ;
-  font-size: 20px;
-  width: 280px;
+  font-size: 14px;
+  width: 220px;
   border-radius: 8px;
   height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
+
 }
 
 .st-container .set-dropdown ul li a:hover{
@@ -183,17 +195,17 @@ export default {
     font-family: "Poppins", sans-serif;
     transition: background-color 0.7s ease, transform 0.6s ease-in-out;
     background-size: 30px;
-  display: flex;
-  align-items: center;
-  padding: 2px 50px;
-  background-position: 10px;
+    display: flex;
+    align-items: center;
+    padding: 2px 50px;
+    background-position: 10px;
 }
 
 .st-container label:hover{
   background-color: white;
   color: #0092E1;
   transform: scale(1.2);
-  width: 280px;
+  width: 250px;
   border-radius: 4px;
   display: flex;
   align-items: flex-start;
@@ -218,13 +230,13 @@ export default {
     gap: 1rem;
     padding: 2px 50px;
     background-position: 10px;
+
 }
 
 .Left-menu-container a:hover {
     background-color: white;
     color: #0092E1;
     transform: scale(1.2);
-    width: 280px;
     border-radius: 4px;
     display: flex;
     align-items: flex-start;
@@ -238,6 +250,7 @@ export default {
     background-image: url('@/assets/dashboard.png');
     background-repeat: no-repeat;
     display: inline-block;
+    width: 230px;
 }
 
 .Left-menu-container .db-container a:hover {
@@ -248,6 +261,7 @@ export default {
 .Left-menu-container .rp-container a {
     background-image: url('@/assets/rp.png');
     background-repeat: no-repeat;
+    width: 230px;
 }
 
 .Left-menu-container .rp-container a:hover {
@@ -259,6 +273,7 @@ export default {
 .Left-menu-container .att-container a {
     background-image: url('@/assets/att.png');
     background-repeat: no-repeat;
+    width: 230px;
 }
 
 .Left-menu-container .att-container a:hover {
@@ -270,6 +285,7 @@ export default {
 .Left-menu-container .st-container label {
     background-image: url('@/assets/set.png');
     background-repeat: no-repeat;
+    width: 230px;
 }
 
 .Left-menu-container .st-container label:hover {
@@ -293,7 +309,7 @@ export default {
     width: 100%;
     /* height: 100vh; */
     /* padding: 36px 26px; */
-    display: flex;
+
 }
 
 .right-container .profile-container {
@@ -413,6 +429,8 @@ export default {
   transform: rotate(0deg);
   transition: transform 0.2s ease-in-out;
 }
+
+
 
 /* .link-container {
     width: 100%;

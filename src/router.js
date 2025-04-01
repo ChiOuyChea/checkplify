@@ -7,11 +7,11 @@ import MainLayout from './views/master/MainLayout.vue';
 import DashboardView from './components/DashboardView.vue';
 import ReportView from './components/ReportView.vue';
 import AttendanceView from './components/AttendanceView.vue';
-
+import AccountInformation from "./components/AccountInformation.vue";
 
 
 const routes = [
-  { 
+  {
     path: '/',
     component: MainLayout,
     children:[
@@ -20,6 +20,7 @@ const routes = [
       { path: '/dashboard', component: DashboardView },
       { path: '/report', component: ReportView },
       { path: '/attendance', component: AttendanceView },
+      { path: '/AccountInformation', component: AccountInformation },
     ]
   },
   { path: '/login', component: LogInForm },
