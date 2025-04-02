@@ -67,7 +67,7 @@ form {
     height: 800px;
     background-color: #D9D9D9;
     box-shadow: 1px 1px 6px 0px hsla(0, 0%, 0%, 0.295);
-
+  font-family: "Poppins", sans-serif
 }
 
 form .SignIn-Form {
@@ -81,7 +81,7 @@ form .SignIn-Form {
     color: black;
     margin-top: -70px;
     margin-left: -30px;
-    font-size: 20px;
+    font-size: 24px;
     
 }
 
@@ -124,7 +124,7 @@ form .SignIn-Form {
 .txt-info input[type="text"] {
     padding: 2px 36px;
     box-sizing: border-box;
-    font-size: 18px;
+    font-size: 16px;
     border: 1px solid #0092E1;
     /* box-shadow: 1px 1px 6px 0px hsla(0, 0%, 0%, 0.295); */
     border-radius: 8px;
@@ -139,7 +139,7 @@ form .SignIn-Form {
 
 .txt-info input::placeholder {
     font-family: "Gurajada", sans-serif;
-    font-size: 28px;
+    font-size: 20px;
     color: rgba(0, 0, 0, 0.253);
 }
 
@@ -148,7 +148,7 @@ form .SignIn-Form {
 .txt-info input[type="password"] {
     padding: 2px 36px;
     box-sizing: border-box;
-    font-size: 18px;
+    font-size: 16px;
     border: 1px solid #0092E1;
     /* box-shadow: 1px 1px 6px 0px hsla(0, 0%, 0%, 0.295); */
     border-radius: 8px;
@@ -165,17 +165,7 @@ form .SignIn-Form {
     margin-top: -20px;
 }
 
-.forget-password a {
-    text-decoration: none;
-    font-family: "Gurajada", sans-serif;
-    font-size: 24px;
-    cursor: pointer;
-    color: rgba(0, 0, 0, 0.541);
-}
 
-.forget-password a:hover {
-    color: #0092E1;
-}
 
 .btn-log {
     display: flex;
@@ -191,7 +181,7 @@ form .SignIn-Form {
     width: 100%;
     max-width: 450px;
     height: 45px;
-    font-size: 18px;
+    font-size: 20px;
     transition: transform 0.6s ease, box-shadow 0.3s ease, background-color 0.6s ease;
     cursor: pointer;
 }

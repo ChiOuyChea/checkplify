@@ -11,6 +11,8 @@ import LeaveMobile from './views/mobile/LeaveMobile.vue';
 import ReportMobile from './views/mobile/ReportMobile.vue';
 import QRCodeMobile from './views/mobile/QRCodeMobile.vue';
 import NotificationMobile from './views/mobile/NotificationMobile.vue';
+import AccountInformation from "@/components/AccountInformation.vue";
+import ChangePassword from "@/components/ChangePassword.vue";
 
 const routes = [
   { 
@@ -22,6 +24,8 @@ const routes = [
       { path: '/dashboard', component: DashboardView },
       { path: '/report', component: ReportView },
       { path: '/attendance', component: AttendanceView },
+      { path: '/AccountInformation', component: AccountInformation },
+      { path: '/ChangePassword', component: ChangePassword },
     ]
   },
   { path: '/login', component: LogInForm },

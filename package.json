@@ -12,6 +12,7 @@
     "chartjs-chart-error-bars": "^4.3.0",
     "core-js": "^3.8.3",
     "html5-qrcode": "^2.3.8",
+    "tailwindcss": "^4.1.0",
     "vue": "^3.2.13",
     "vue-router": "^4.5.0"
   },

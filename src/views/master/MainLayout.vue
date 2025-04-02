@@ -1,6 +1,43 @@
 <template lang="">
 
     <div class="main-container">
+      <div class="off-screen-menu" :class="{ active: offScreenMenuActive }">
+         <div class="logo-container">
+                <img src="@/assets/logo.png" class="logo" style="width:50px;">
+            <label style="font-size:42px;">Checkplify</label>
+            </div>
+            <div class="Left-menu-container">
+                <div class="db-container">
+                    <router-link to="/dashboard" >DashBoard</router-link>
+                </div>
+                <div class="rp-container">
+                    <router-link to="/report">Report</router-link>
+                </div>
+                <div class="att-container">
+                    <router-link to="/attendance">Attendance</router-link>
+                </div>
+                <div class="st-container" @mouseenter="SetdropdownVisible = true" @mouseleave="SetdropdownVisible = false" >
+                    <label >Setting</label>
+                    <transition name="fade">
+                        <div class="set-dropdown" v-show="SetdropdownVisible">
+                            <ul>
+                                <li><router-link to="/AccountInformation">Account Information</router-link></li>
+                                <li><router-link to="/ChangePassword">Change Password</router-link></li>
+
+                            </ul>
+                        </div>
+                    </transition>
+                </div>
+            </div>
+      </div>
+      <nav>
+         <div class="ham-menu" :class="{ active: offScreenMenuActive }" @click="toggleOffScreenMenu">
+          <span></span>
+          <span></span>
+          <span></span>
+         </div>
+      </nav>
+
         <div class="left-container">       
             <div class="logo-container">
                 <img src="@/assets/logo.png" class="logo" style="width:50px;">
@@ -22,10 +59,8 @@
                         <div class="set-dropdown" v-show="SetdropdownVisible">
                             <ul>
                                 <li><router-link to="/AccountInformation">Account Information</router-link></li>
-                                <li><router-link>Change Password</router-link></li>
-                                <li><router-link>Notification</router-link></li>
-                                <li><router-link>Personalization</router-link></li>
-                                <li><router-link>Security and Privacy</router-link></li>
+                                <li><router-link to="/ChangePassword">Change Password</router-link></li>
+
                             </ul>
                         </div>
                     </transition>
@@ -69,24 +104,7 @@
         
     </div>
 </template>
-<script>
-export default {
-    data() {
-        return {
-            ProfiledropdownVisible: false,
-            SetdropdownVisible: false
-        };
-    },
-    methods: {
-        toggleDropdown() {
-            this.ProfiledropdownVisible = !this.ProfiledropdownVisible;
-        },
-        toggleSetdrop(){
-          this.SetdropdownVisible = !this.SetdropdownVisible;
-        }
-    }
-};
-</script>
+
 <style>
 .logo-container {
     display: flex;
@@ -98,6 +116,10 @@ export default {
 
 .main-container {
     display: flex;
+}
+
+.off-screen-menu {
+  display: none;
 }
 
 .left-container{
@@ -164,18 +186,14 @@ export default {
   white-space: nowrap;
 }
 
-.st-container .set-dropdown ul li{
-
-}
 
 .st-container .set-dropdown ul li a{
   background-image:none;
   background-color:white;
   color:#0092E1 ;
-  font-size: 14px;
+  font-size: 16px;
   width: 220px;
   border-radius: 8px;
-  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -191,10 +209,10 @@ export default {
 
 .st-container label{
     color: white;
-    font-size: 24px;
+    font-size: 20px;
     font-family: "Poppins", sans-serif;
     transition: background-color 0.7s ease, transform 0.6s ease-in-out;
-    background-size: 30px;
+    background-size: 20px;
     display: flex;
     align-items: center;
     padding: 2px 50px;
@@ -218,19 +236,19 @@ export default {
   background-color: #f0f0f0;
 }
 
+
 .Left-menu-container a {
     color: white;
     text-decoration: none;
-    font-size: 24px;
+    font-size: 20px;
     font-family: "Poppins", sans-serif;
     transition: background-color 0.7s ease, transform 0.6s ease-in-out;
-    background-size: 30px;
+    background-size: 20px;
     display: flex;
     align-items: center;
     gap: 1rem;
     padding: 2px 50px;
     background-position: 10px;
-
 }
 
 .Left-menu-container a:hover {
@@ -251,6 +269,7 @@ export default {
     background-repeat: no-repeat;
     display: inline-block;
     width: 230px;
+
 }
 
 .Left-menu-container .db-container a:hover {
@@ -430,10 +449,151 @@ export default {
   transition: transform 0.2s ease-in-out;
 }
 
+.router-link-active{
+  background-color: white;
+}
+
+.router-link-exact-active{
+  background-color: white;
+  color: white;
+}
+
+@media (max-width: 950px){
+
+  .main-container{
+    position: relative;
+  }
+
+  .left-container{
+    display: none;
+  }
+
+  .logo-container{
+    margin-top: 7rem;
+    color: white;
+  }
+
+  .off-screen-menu {
+    background-color:#0092E1;
+    height: 100vh;
+    width: 100%;
+    max-width: 350px;
+    position: fixed;
+    top: 0;
+    left: -350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 24px;
+    transition: 0.3s ease;
+    z-index: 1000;
+  }
+  .off-screen-menu.active {
+    left:0;
+  }
+
+  nav{
+    display: flex;
+    position: absolute;
+    top: 35px;
+    left: 25px;
+    z-index: 1001;
+  }
+
+  .ham-menu{
+    height: 50px;
+    width: 50px;
+    margin-left:auto;
+    position: relative;
+  }
+
+  .ham-menu span{
+    height: 4px;
+    width: 100%;
+    background-color: black;
+    border-radius: 25px;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: 0.3s ease;
+  }
+
+  .ham-menu span:nth-child(1){
+    top: 25%;
+  }
+
+  .ham-menu span:nth-child(3){
+    top: 75%;
+  }
+
+  .ham-menu.active span:nth-child(1){
+    top: 50%;
+    transform: translate(-50%,-50%) rotate(45deg);
+    background-color: white;
+  }
+
+  .ham-menu.active span:nth-child(2){
+    opacity: 0;
+  }
+
+  .ham-menu.active span:nth-child(3){
+    top: 50%;
+    transform: translate(-50%,-50%) rotate(-45deg);
+    background-color: white;
+  }
+
+  .search-container{
+    margin-left: 7rem;
+  }
+}
 
 
+
+
+@media (max-width: 750px){
+
+  .txt-search input{
+    width: 300px;
+  }
+
+  .profile-container i {
+    font-size: 16px;
+  }
+  .profile-dropdown a{
+    white-space: nowrap;
+    font-size: 16px;
+  }
+}
 /* .link-container {
     width: 100%;
     height: 100%;
 } */
 </style>
+
+<script>
+export default {
+  data() {
+    return {
+      ProfiledropdownVisible: false,
+      SetdropdownVisible: false,
+      offScreenMenuActive: false, // <-- Add this for mobile menu toggle
+    };
+  },
+  methods: {
+    toggleDropdown() {
+      this.ProfiledropdownVisible = !this.ProfiledropdownVisible;
+    },
+    toggleSetdrop() {
+      this.SetdropdownVisible = !this.SetdropdownVisible;
+    },
+    toggleOffScreenMenu() {
+      this.offScreenMenuActive = !this.offScreenMenuActive; // <-- Toggle menu visibility
+    },
+
+  }
+};
+</script>
+
+
+

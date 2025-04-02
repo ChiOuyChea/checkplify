@@ -1,464 +1,276 @@
 <template>
-  <div class="dashboard-wrapper">
-    <div class="dashboard-item">
-        <div class="title">
-            <span>
-                Statistics
-            </span>
+  <div class="Report-wrapper">
+    <div class="check-Table">
+      <div class="table-col">
+        <div class="txtBox">
+          <span class="txtBox-header">ID</span>
+          <input type="text" class="txtBox-body">
         </div>
-        <div class="content">
-            <canvas ref="statisticsChart"></canvas>
+        <div class="txtBox">
+          <span class="txtBox-header">Position</span>
+          <input type="text" class="txtBox-body">
         </div>
+        <div class="txtBox">
+          <span class="txtBox-header">Time</span>
+          <input type="text" class="txtBox-body">
+        </div>
+        <div class="txtBox">
+          <span class="txtBox-header">Phone Number</span>
+          <input type="text" class="txtBox-body">
+        </div>
+        <div class="txtBox">
+          <span class="txtBox-header">Professor Name</span>
+          <input type="text" class="txtBox-body">
+        </div>
+        <div class="txtBox">
+          <span class="txtBox-header">OverTime</span>
+          <input type="text" class="txtBox-body">
+        </div>
+      </div>
     </div>
-    <div class="dashboard-item">
-        <div class="title">
-            <span>
-                Attendance
-            </span>
-        </div>
-        <div class="content">
-            <div class="attendance-container">
-                <div class="attendance-item">
-                    <div class="attendance-content">
-                        <div class="icon-container">
-                            <img src="" alt="">
-                        </div>
-                        <div class="attendance-title">
-                            <span>Checked it</span>
-                        </div>
-                        <div class="attendance-value">
-                            <span>5000</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="attendance-item">
-                    <div class="attendance-content">
-                        <div class="icon-container">
-                            <img src="" alt="">
-                        </div>
-                        <div class="attendance-title">
-                            <span>Not Checked In</span>
-                        </div>
-                        <div class="attendance-value">
-                            <span>5000</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="attendance-item">
-                    <div class="attendance-content">
-                        <div class="icon-container">
-                            <img src="" alt="">
-                        </div>
-                        <div class="attendance-title">
-                            <span>On Leave</span>
-                        </div>
-                        <div class="attendance-value">
-                            <span>5000</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="attendance-item">
-                    <div class="attendance-content">
-                        <div class="icon-container">
-                            <img src="" alt="">
-                        </div>
-                        <div class="attendance-title">
-                            <span>Weekly Off</span>
-                        </div>
-                        <div class="attendance-value">
-                            <span>5000</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="attendance-item">
-                    <div class="attendance-content">
-                        <div class="icon-container">
-                            <img src="" alt="">
-                        </div>
-                        <div class="attendance-title">
-                            <span>Weekly</span>
-                        </div>
-                        <div class="attendance-value">
-                            <span>5000</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="attendance-item">
-                    <div class="attendance-content">
-                        <div class="icon-container">
-                            <img src="" alt="">
-                        </div>
-                        <div class="attendance-title">
-                            <span>Checked Out</span>
-                        </div>
-                        <div class="attendance-value">
-                            <span>5000</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+    <div class="table-container">
+      <table>
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Position</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Hours</th>
+          <th>Overtime</th>
+          <th>Extra Time</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        </tbody>
+      </table>
     </div>
-    <div class="dashboard-item">
-        <div class="title">
-            <span>
-                On Time Check In
-            </span>
+
+    <div class="txtTotal-container">
+      <h1>Total</h1>
+      <div class="receipt-container">
+        <label for="">Working hours without overtime</label>
+        <div class="total-header">
+          <label>Total</label>
+          <span>12.9</span>
         </div>
-        <div class="content">
-            <canvas ref="onTimeChart"></canvas>
+        <hr>
+        <br>
+        <div class="total-body">
+          <label>Total</label>
+          <span>12.9</span>
         </div>
+        <div class="total-body">
+          <label>Total</label>
+          <span>12.9</span>
+        </div>
+        <br>
+        <hr>
+        <div class="total-bottom">
+          <label>Total</label>
+          <span>12.9</span>
+        </div>
+      </div>
     </div>
-    <div class="dashboard-item">
-        <div class="title">
-            <span>
-                Overtime
-            </span>
-        </div>
-        <div class="content">
-            <canvas ref="overTimeChart"></canvas>
-        </div>
-    </div>
-    <div class="dashboard-item">
-        <div class="title">
-            <span>
-                Attendance Source
-            </span>
-        </div>
-        <div class="content">
-            <div class="attendance-source-wrapper">
-                <div class="source-items">
-                    <div class="source-title">
-                        <span>Item1</span>
-                    </div>
-                    <div class="source-value">
-                        <span>5000</span>
-                    </div>
-                </div>
-                <div class="source-items">
-                    <div class="source-title">
-                        <span>Item1</span>
-                    </div>
-                    <div class="source-value">
-                        <span>5000</span>
-                    </div>
-                </div>
-                <div class="source-items">
-                    <div class="source-title">
-                        <span>Item1</span>
-                    </div>
-                    <div class="source-value">
-                        <span>5000</span>
-                    </div>
-                </div>
-                <div class="source-items">
-                    <div class="source-title">
-                        <span>Item1</span>
-                    </div>
-                    <div class="source-value">
-                        <span>5000</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="dashboard-item">
-        <div class="title">
-            <span>
-                Exceptions
-            </span>
-        </div>
-        <div class="content">
-            <div class="others-container">
-                <div class="other-item">
-                    <div class="other-title">
-                        <span>Item Title</span>
-                    </div>
-                    <div class="other-value">
-                        <span>5000</span>
-                    </div>
-                </div>
-                <div class="other-item">
-                    <div class="other-title">
-                        <span>Item Title</span>
-                    </div>
-                    <div class="other-value">
-                        <span>5000</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="dashboard-item">
-        <div class="title">
-            <span>
-                Pending Requests
-            </span>
-        </div>
-        <div class="content">
-            <div class="others-container">
-                <div class="other-item">
-                    <div class="other-title">
-                        <span>Item Title</span>
-                    </div>
-                    <div class="other-value">
-                        <span>5000</span>
-                    </div>
-                </div>
-                <div class="other-item">
-                    <div class="other-title">
-                        <span>Item Title</span>
-                    </div>
-                    <div class="other-value">
-                        <span>5000</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
   </div>
+
+
 </template>
 
-  
 <script>
-    import { ref, onMounted } from "vue";
-    import { Chart, registerables } from "chart.js";
-
-    Chart.register(...registerables);
-
-    export default {
-        setup() {
-            const statisticsChart = ref(null);
-            const onTimeChart = ref(null);
-            const overTimeChart = ref(null);
-
-            onMounted(() => {
-            // Initialize Pie Chart
-                if (statisticsChart.value) {
-                    new Chart(statisticsChart.value, {
-                    type: "pie",
-                    data: {
-                        labels: ["Red", "Blue", "Yellow"],
-                        datasets: [
-                        {
-                            label: "Votes",
-                            data: [12, 19, 7],
-                            backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"],
-                        },
-                        ],
-                    },
-                    options: {
-                        responsive: true,
-                    },
-                    });
-                }
-
-                // Initialize Bar Chart
-                if (onTimeChart.value) {
-                    new Chart(onTimeChart.value, {
-                    type: "bar",
-                    data: {
-                        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
-                        datasets: [
-                        {
-                            label: "Performance",
-                            data: [80, 75, 85, 78, 82, 88],
-                            backgroundColor: "rgba(54, 162, 235, 0.7)",
-                            borderColor: "dodgerblue",
-                            borderWidth: 1,
-                        },
-                        ],
-                    },
-                    options: {
-                        responsive: true,
-                        scales: {
-                        y: {
-                            beginAtZero: true,
-                            title: {
-                            display: true,
-                            text: "Performance (%)",
-                            },
-                        },
-                        },
-                    },
-                    });
-                }
-                // Initialize Bar Chart
-                if (overTimeChart.value) {
-                    new Chart(overTimeChart.value, {
-                    type: "bar",
-                    data: {
-                        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
-                        datasets: [
-                        {
-                            label: "Performance",
-                            data: [80, 75, 85, 78, 82, 88],
-                            backgroundColor: "rgba(54, 162, 235, 0.7)",
-                            borderColor: "dodgerblue",
-                            borderWidth: 1,
-                        },
-                        ],
-                    },
-                    options: {
-                        responsive: true,
-                        scales: {
-                        y: {
-                            beginAtZero: true,
-                            title: {
-                            display: true,
-                            text: "Performance (%)",
-                            },
-                        },
-                        },
-                    },
-                    });
-                }
-            });
-
-            return { statisticsChart, onTimeChart, overTimeChart };
-        },
-    };
 </script>
-  
 
 <style>
-    .dashboard-wrapper {
-        display: grid;
-        grid-template-columns: repeat(12, minmax(0, 1fr)); /* Ensures columns never shrink unevenly */
-        gap: 1rem;
-        /* background-color: dodgerblue;
-        padding: 10px; */
-        width: 100%;
-        height: 100%;
-        font-family: 'Poppins', sans-serif;
-    }
-    .dashboard-wrapper > .dashboard-item {
-        background-color: #F4F6FA;
-        border-radius: 28px;
-        box-shadow: 0 4px 4px rgba(0, 0, 0, .25);
-        padding: 1rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        flex-direction: column;
-        box-sizing: border-box; /* Ensures padding doesn't add extra width */
-        margin: 0;
-        width: 100%; /* Forces full width of the grid cell */
-        gap: 1rem;
 
-    }
-    /* LAYOUT  */
-    .dashboard-wrapper > .dashboard-item:nth-child(1) {
-        grid-column: span 2;
-    }
-    .dashboard-wrapper > .dashboard-item:nth-child(2) {
-        grid-column: span 10;
-    }
-    .dashboard-wrapper > .dashboard-item:nth-child(3){
-        grid-column: span 4;
-    }
-    .dashboard-wrapper > .dashboard-item:nth-child(4){
-        grid-column: span 4;
-    }
-    .dashboard-wrapper > .dashboard-item:nth-child(5){
-        grid-column: span 4;
-    }
-    .dashboard-wrapper > .dashboard-item:nth-child(6){
-        grid-column: span 6;
-    }
-    .dashboard-wrapper > .dashboard-item:nth-child(7){
-        grid-column: span 6;
-    }
-    .dashboard-wrapper .title span{
-        font-size: 24px;
-    }
-    .dashboard-wrapper .content {
-        width: 100%;
-    }
-    .dashboard-wrapper .content > canvas {
-        width: 100%;
-    }
-    .dashboard-wrapper .attendance-container {
-        /* padding: 5px 1rem; */
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        width: 100%;
-        gap: 1rem;
-    }
-    .attendance-container .attendance-item {
-        background-color: white;
-        box-shadow: 0 4px 4px rgba(0, 0, 0, .25);
-        border-radius: 19px;
-        padding: 2rem 1rem;
-        width: 100%;
-    }
-    .attendance-container .attendance-content {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        text-align: center;
-        gap: 1rem;
-    }
-    .attendance-container .attendance-title {
-        font-size: 13px;
-    } 
-    .attendance-container .attendance-value {
-        font-size: 32px;
-        color: red;
-    }
-    .attendance-container .icon-container {
-        width: 30px;
-        height: 30px;
-        border-radius: 7px;
-        background-color: #D9D9D9;
-        display: flex;
-        justify-content: center;
-    }
-    .dashboard-item .attendance-source-wrapper {
-        display: grid;
-        grid-template-columns: repeat(12, minmax(0, 1fr)); /* Ensures columns never shrink unevenly */
-        gap: 1rem;
-        padding: .5rem;
-    }
-    .attendance-source-wrapper .source-items {
-        grid-column: span 6;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: white;
-        border-radius: 19px;
-        padding: .5rem;
-        flex-direction: column;
-        box-shadow: 0 4px 4px rgba(0, 0, 0, .25);
-    }
-    .source-items .source-title {
-        font-size: 16px;
-    }
-    .source-items .source-value {
-        font-size: 32px;
-        color: #0092E1;
-    }
-    .others-container {
-        margin-top: 15px;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        gap: 1rem;
-    }
-    .others-container .other-item {
-        background-color: white;
-        border-radius: 19px;
-        width: 100%;
-        padding: 1rem;
-        box-shadow: 0 4px 4px rgba(0, 0, 0, .25);
-    }
-    .other-item .other-title {
-        font-size: 16px;
-    }
-    .other-item .other-value { 
-        font-size: 36px;
-        color: #0092E1;
-    }
+.Report-wrapper {
+  padding: 0 20px;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.table-col{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.8rem;
+  width: 100%;
+}
+
+.table-col .txtBox{
+  width: 100%;
+  max-width: 250px;
+}
+
+.check-Table {
+    background-color: #D9D9D9;
+    display: inline-block;
+    padding: 8px;
+    width: 100%;
+    max-width: 1440px;
+}
+
+.txtBox{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+}
+
+
+.txtBox-header{
+  background-color: white;
+  width: 100%;
+  max-width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 35px;
+  border-radius: 3px;
+  color: #0092E1;
+}
+
+.txtBox-body{
+  width: 250px;
+  border: none;
+  height: 35px;
+  border-radius: 3px;
+}
+
+.table-container{
+  background-color: #FFFFFF;
+  box-shadow: 4px 4px 4px 0 rgb(0, 0, 0,0.25);
+  border-radius: 20px;
+  padding: 12px;
+  width: 100%;
+  max-width: 1440px;
+}
+
+table {
+  width: 100%;
+  max-width: 1440px;
+  border-collapse: collapse;
+  border: none;
+}
+
+
+th, td {
+  border-bottom: 2px solid black; /* Horizontal line */
+  border-right: 2px solid black;
+  padding: 8px;
+  text-align: center;
+  height: 35px;
+}
+
+th:last-child, td:last-child {
+  border-right: none;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+.receipt-container{
+  margin-top: 16px;
+  width: 100%;
+  max-width: 308px;
+  height: 290px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  box-shadow: 0px 4px 4px 0 rgb(0, 0, 0,0.25);
+  font-size: 18px;
+}
+
+.total-header {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.total-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.total-bottom{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 22px;
+}
+
+@media (max-width: 950px){
+  .table-col{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+
+  }
+
+}
 </style>

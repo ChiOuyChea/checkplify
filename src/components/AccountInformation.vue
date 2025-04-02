@@ -1,6 +1,6 @@
 <template>
   <div class="Account-wrapper">
-    <div class="title">
+    <div class="title" style="color: #0092E1">
       <h1>Account Information</h1>
     </div>
     <div class="form-container">
@@ -15,13 +15,18 @@
           </div>
           <div class="txt-row">
             <label for="">Email</label>
-            <input type="email" id="" v-model="email" placeholder="user@example.com">
-            <label for="">not verified</label>
+            <div class="txt-verify">
+              <input type="email" id="" v-model="email" placeholder="user@example.com" class="txtInput">
+              <label for="" class="verify">Not verified</label>
+            </div>
+
           </div>
           <div class="txt-row">
             <label for="">Phone Number</label>
-            <input type="text" id="" v-model="phoneNumber" placeholder="Phone Number">
-            <label for="">not verified</label>
+            <div class="txt-verify">
+            <input type="text" id="" v-model="phoneNumber" placeholder="Phone Number" class="txtInput">
+            <label for="" class="verify">Not verified</label>
+            </div>
           </div>
           <div class="txt-row">
             <label for="">Date of birth</label>
@@ -51,15 +56,7 @@ export default {
       editMode: false,
     };
   },
-  methods: {
-    toggleEdit() {
-      this.editMode = !this.editMode;
-    },
-    toggleSave() {
-      alert("Information saved!");
-      this.editMode = false;
-    },
-  },
+
 };
 </script>
 
@@ -67,7 +64,7 @@ export default {
     .Account-wrapper {
       font-family: "Poppins", sans-serif;
       gap: 2rem;
-      padding: 2rem 2rem;
+      padding: 2rem;
     }
 
     .form-container{
@@ -111,5 +108,55 @@ export default {
       font-size: 16px;
       outline: none;
       border: solid 1px rgb(0, 146, 225);
+    }
+
+    .txt-verify{
+      display: inline-block;
+      position: relative;
+    }
+
+    .txt-verify .txtInput{
+      padding-right:7rem;
+    }
+
+    .verify{
+      position: absolute;
+      right: 35px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    @media (max-width: 1600px) {
+      .txt-row input{
+        height:45px;
+        width: 100%;
+        max-width: 473px;
+      }
+
+      .verify{
+        position: absolute;
+        right: 50px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+
+    @media (max-width: 1400px){
+      .verify{
+        position: absolute;
+        right: 30px;
+        top: 50%;
+      }
+    }
+
+    @media (max-width: 1200px){
+      .verify{
+        font-size: 14px;
+      }
+    }
+
+    @media (max-width: 750px){
+      .txt-row input{
+        font-size: 15px;
+      }
     }
 </style>

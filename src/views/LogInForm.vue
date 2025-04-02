@@ -65,7 +65,7 @@ form {
     height: 800px;
     background-color: #D9D9D9;
     box-shadow: 1px 1px 6px 0px hsla(0, 0%, 0%, 0.295);
-
+    font-family: "Poppins", sans-serif;
 }
 
 form .logIn-Form {
@@ -113,7 +113,7 @@ form .logIn-Page {
 .email input[type="text"] {
     padding: 2px 36px;
     box-sizing: border-box;
-    font-size: 18px;
+    font-size: 16px;
     border: 1px solid #0092E1;
     /* box-shadow: 1px 1px 6px 0px hsla(0, 0%, 0%, 0.295); */
     border-radius: 8px;
@@ -128,7 +128,7 @@ form .logIn-Page {
 
 .email input::placeholder {
     font-family: "Gurajada", sans-serif;
-    font-size: 28px;
+    font-size: 20px;
     color: rgba(0, 0, 0, 0.253);
 }
 
@@ -142,7 +142,7 @@ form .logIn-Page {
 .password input[type="password"] {
     padding: 2px 36px;
     box-sizing: border-box;
-    font-size: 18px;
+    font-size: 16px;
     border: 1px solid #0092E1;
     /* box-shadow: 1px 1px 6px 0px hsla(0, 0%, 0%, 0.295); */
     border-radius: 8px;
@@ -157,7 +157,7 @@ form .logIn-Page {
 
 .password input::placeholder {
     font-family: "Gurajada", sans-serif;
-    font-size: 28px;
+    font-size: 20px;
     color: rgba(0, 0, 0, 0.253);
 }
 
@@ -170,7 +170,7 @@ form .logIn-Page {
 .forget-password a {
     text-decoration: none;
     font-family: "Gurajada", sans-serif;
-    font-size: 24px;
+    font-size: 20px;
     cursor: pointer;
     color: rgba(0, 0, 0, 0.541);
 }
@@ -212,7 +212,7 @@ form .logIn-Page {
     margin-top: -20px;
     gap: 0.5rem;
     font-family: "Gurajada", sans-serif;
-    font-size: 24px;
+    font-size: 22px;
     cursor: pointer;
     color: rgba(0, 0, 0, 0.541);
 }
@@ -221,7 +221,7 @@ form .logIn-Page {
     font-family: "Instrument Sans",sans-serif;
     color:#0092E1 ;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 14px;
     
 }
 
