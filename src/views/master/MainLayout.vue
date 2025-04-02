@@ -1,10 +1,11 @@
 <template lang="">
 
     <div class="main-container">
+      <div class="off-screen-menu-bg" :class="{ active: offScreenMenuActive }" @click="toggleOffScreenMenu"></div>
       <div class="off-screen-menu" :class="{ active: offScreenMenuActive }">
          <div class="logo-container">
-                <img src="@/assets/logo.png" class="logo" style="width:50px;">
-            <label style="font-size:42px;">Checkplify</label>
+                <img src="@/assets/logo2.png" class="logo" style="width:30px;">
+            <label style="font-size:28px;">Checkplify</label>
             </div>
             <div class="Left-menu-container">
                 <div class="db-container">
@@ -40,8 +41,8 @@
 
         <div class="left-container">       
             <div class="logo-container">
-                <img src="@/assets/logo.png" class="logo" style="width:50px;">
-            <label style="font-size:42px;">Checkplify</label>
+                <img src="@/assets/logo2.png" class="logo" style="width:30px;">
+            <label style="font-size:28px;">Checkplify</label>
             </div>
             <div class="Left-menu-container">
                 <div class="db-container">
@@ -80,13 +81,14 @@
                     <i class="fa-solid fa-user"></i>    
                     <div class="profile-dropdown" >
                         <router-link to="" >My Profile
-                            <i class="fa-solid fa-angle-down" :class="{'rotate': ProfiledropdownVisible, 'rotate-back': !ProfiledropdownVisible}" style="background-color:white;font-size:30px;"></i>
+                            <i class="fa-solid fa-angle-down" :class="{'rotate': ProfiledropdownVisible, 'rotate-back': !ProfiledropdownVisible}" style="background-color:white;font-size:20px;"></i>
                         </router-link>
                         <transition name="fade">
                             <div class="dropdown" v-show="ProfiledropdownVisible">
                                 <ul>
                                     <li>
-                                        <router-link to="/edit-profile">Edit Profile</router-link>
+                                        <!-- <router-link to="/edit-profile">Edit Profile</router-link> -->
+                                        <router-link to="/mobile">Edit Profile</router-link>
                                     </li>
                                     <li>
                                         <router-link to="/login">Log out</router-link>
@@ -109,6 +111,7 @@
 .logo-container {
     display: flex;
     align-items: center;
+    justify-content: center;
     margin-top: 36px;
     gap: 1rem;
 }
@@ -122,9 +125,23 @@
   display: none;
 }
 
+.off-screen-menu-bg {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.25);
+  z-index: 900;
+} 
+
 .left-container{
     width: 100%;
-    max-width: 350px;
+    min-width: 250px;
+    max-width: 250px;
+    overflow: hidden;
+    transition: all 0.5s;
 }
 
 .main-container .left-container {
@@ -147,7 +164,7 @@
 }
 
 .Left-menu-container {
-    padding: 20px 40px;
+    /* padding: 20px 40px; */
     margin-top: 50px;
     display: flex;
     align-items: flex-start;
@@ -155,6 +172,10 @@
     justify-content: center;
     gap: 2.2rem;
 
+}
+
+.Left-menu-container > div {
+  width: 100%;
 }
 
 .icon {
@@ -186,14 +207,18 @@
   white-space: nowrap;
 }
 
+.st-container .set-dropdown ul li {
+  width: 100%;
+}
 
 .st-container .set-dropdown ul li a{
   background-image:none;
   background-color:white;
   color:#0092E1 ;
   font-size: 16px;
-  width: 220px;
+  width: 100%;
   border-radius: 8px;
+  padding: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -222,7 +247,7 @@
 .st-container label:hover{
   background-color: white;
   color: #0092E1;
-  transform: scale(1.2);
+  transform: scale(1.05);
   width: 250px;
   border-radius: 4px;
   display: flex;
@@ -247,19 +272,19 @@
     display: flex;
     align-items: center;
     gap: 1rem;
-    padding: 2px 50px;
+    /* padding: 2px 50px; */
     background-position: 10px;
-}
+    padding: 4px 50px;
+  }
 
 .Left-menu-container a:hover {
     background-color: white;
     color: #0092E1;
-    transform: scale(1.2);
+    /* transform: scale(1.05); */
     border-radius: 4px;
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-    padding: 4px 50px;
     background-position: 10px;
 
 }
@@ -268,7 +293,8 @@
     background-image: url('@/assets/dashboard.png');
     background-repeat: no-repeat;
     display: inline-block;
-    width: 230px;
+    width: 100%;
+    display: block;
 
 }
 
@@ -280,7 +306,8 @@
 .Left-menu-container .rp-container a {
     background-image: url('@/assets/rp.png');
     background-repeat: no-repeat;
-    width: 230px;
+    width: 100%;
+    display: block;
 }
 
 .Left-menu-container .rp-container a:hover {
@@ -292,7 +319,8 @@
 .Left-menu-container .att-container a {
     background-image: url('@/assets/att.png');
     background-repeat: no-repeat;
-    width: 230px;
+    width: 100%;
+    display: block;
 }
 
 .Left-menu-container .att-container a:hover {
@@ -304,7 +332,8 @@
 .Left-menu-container .st-container label {
     background-image: url('@/assets/set.png');
     background-repeat: no-repeat;
-    width: 230px;
+    width: 100%;
+    display: block;
 }
 
 .Left-menu-container .st-container label:hover {
@@ -350,7 +379,7 @@
     color: black;
     background-color: transparent;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -361,8 +390,15 @@
     border-radius: 50%;
     background-color: #CBCBCB;
     padding: 15px;
-    font-size: 20px;
+    font-size: 15px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
     margin-left: auto;
+    /* display: block; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .profile-dropdown{
@@ -396,7 +432,7 @@
 }
 
 .profile-dropdown ul li a{
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .profile-dropdown ul li a:hover{
@@ -465,7 +501,12 @@
   }
 
   .left-container{
-    display: none;
+    width: 0;
+    min-width: 0;
+    overflow: hidden;
+    /* position: absolute; */
+    margin-left: -100px;
+    margin-right: 60px;
   }
 
   .logo-container{
@@ -473,11 +514,14 @@
     color: white;
   }
 
+  .off-screen-menu-bg.active {
+    display: block;
+  }
   .off-screen-menu {
     background-color:#0092E1;
     height: 100vh;
     width: 100%;
-    max-width: 350px;
+    max-width: 250px;
     position: fixed;
     top: 0;
     left: -350px;
@@ -495,14 +539,15 @@
   nav{
     display: flex;
     position: absolute;
-    top: 35px;
-    left: 25px;
+    top: 45px;
+    left: 45px;
     z-index: 1001;
+    cursor: pointer;
   }
 
   .ham-menu{
-    height: 50px;
-    width: 50px;
+    height: 25px;
+    width: 25px;
     margin-left:auto;
     position: relative;
   }

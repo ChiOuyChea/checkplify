@@ -5,7 +5,7 @@
                 <img src="@/assets/back-arrow.png" alt="" class="back-btn">
             </router-link>
             <div class="title">
-                Request Leave
+                Scan QR Code
             </div>
         </div>
         <div id="reader"></div>

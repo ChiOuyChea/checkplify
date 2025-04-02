@@ -23,7 +23,7 @@
                 <a href="">Forget password?</a>
             </div>
             <div class="btn-log">
-                <button>Login</button>
+                <button @click="login">Login</button>
             </div>
             <div class="create-account" style="">
                 <label>no have account?</label>
@@ -51,6 +51,11 @@ export default {
 
         }
     },
+    methods: {
+        login() {
+            this.$router.push('/dashboard');
+        }
+    }
 }
 </script>
 

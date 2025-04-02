@@ -369,6 +369,14 @@
     .icon-container:hover { 
         transform: translateX(-50%) scale(1.1);
     }
+    @media (max-width: 500px) {
+        #card-wrapper .card-content .card-information {
+            font-size: 13px;
+        }
+        .card-content .card-image {
+            max-width: 70px;
+        }
+    }
 
 
 </style>
