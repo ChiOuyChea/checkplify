@@ -80,9 +80,9 @@
                 <div class="profile-container" @click="toggleDropdown">
                     <i class="fa-solid fa-user"></i>    
                     <div class="profile-dropdown" >
-                        <router-link to="" >My Profile
+                        <button class="btn-profile">My Profile
                             <i class="fa-solid fa-angle-down" :class="{'rotate': ProfiledropdownVisible, 'rotate-back': !ProfiledropdownVisible}" style="background-color:white;font-size:20px;"></i>
-                        </router-link>
+                        </button>
                         <transition name="fade">
                             <div class="dropdown" v-show="ProfiledropdownVisible">
                                 <ul>
@@ -172,6 +172,11 @@
     justify-content: center;
     gap: 2.2rem;
 
+}
+
+.router-link-active {
+  background-color: #1db1ff !important;
+  color: white;
 }
 
 .Left-menu-container > div {
@@ -437,6 +442,15 @@
 
 .profile-dropdown ul li a:hover{
     color: #0092E1;
+}
+
+.btn-profile{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  border: none;
+  background: transparent;
 }
 
 .search-container .txt-search {

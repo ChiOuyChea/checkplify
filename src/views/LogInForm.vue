@@ -235,4 +235,35 @@ form .logIn-Page {
     
 }
 
+@media (max-width: 820px){
+  form .logIn-Form {
+    width: 100%;
+    height: 800px;
+    background-color: white;
+
+  }
+}
+
+@media (max-width: 512px){
+  .txt-Container {
+    padding:0;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .logIn-text {
+    font-size: 28px;
+  }
+
+  form .logIn-Form {
+    height: 700px;
+  }
+
+  form {
+    height: 700px;
+  }
+}
+
 </style>
